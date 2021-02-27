@@ -1,0 +1,14 @@
+#! /bin/env bash
+
+export IP=192.168.178.37
+export PORT=8102
+
+pioneer_send () {
+  echo $1
+  echo Reply:
+  printf $1"\r" | nc $IP $PORT -w 1
+  echo Next.
+  echo
+  sleep 1
+}
+
